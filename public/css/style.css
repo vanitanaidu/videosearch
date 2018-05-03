@@ -1,10 +1,20 @@
+#search-term {
+  border: 1px solid black;
+  padding-left: 15px;
+  padding-top: 1px;
+  font-size: 22px;
+  color: black;
+}
+
+
 .search-bar {
-  margin: 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .search-bar input {
-  width: 75%;
+  width: 70%;
 }
 
 .video-item img {
@@ -24,4 +34,11 @@
 
 .list-group-item:hover {
   background-color: #eee;
+}
+
+.navbar-custom {
+  font-size: 50px;
+  color: grey;
+  background-color: white;
+
 }
