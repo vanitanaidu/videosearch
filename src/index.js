@@ -6,12 +6,6 @@ import _ from 'lodash';
 import SearchBar from './components/search_bar';
 import VideoList from  './components/video_list';
 import VideoDetail from './components/video_detail';
-// import { createStore, combineReducers, applyMiddleware } from 'redux';
-// import { Provider } from 'react-redux';
-// import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
-// import { BrowserRouter } from 'react-router-dom';
-// import { Route } from 'react-router';
-// import thunk from 'redux-thunk';
 
 const API_KEY = 'AIzaSyAYrEUDDwKXMM1_AeulTVPcXkarKTmv3sY'
 
@@ -35,6 +29,8 @@ class App extends Component {
   }
 
   render() {
+    // the term_.debounce throttles calls. It waits for some time to pass by before calling a function,
+    // in this case it waits for 400 milliseconds before calling the function videoSearch.
     const searchVideo = _.debounce(term => {this.videoSearch(term)}, 400)
     return (
       <div>
@@ -43,17 +39,15 @@ class App extends Component {
             VideoSearch
           </div>
         </nav>
-                  <br></br>
+        <br></br>
           <div className="container">
-          <SearchBar onSearchChange={searchVideo} />
+            <SearchBar onSearchChange={searchVideo} />
           </div>
 
-
           <div className="container">
-
             <VideoDetail video={this.state.selectedVideo} />
             <VideoList
-              onVideoSelect = {selectedVideo => this.setState({selectedVideo}) }
+              onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
               videos={this.state.videos} />
           </div>
       </div>
