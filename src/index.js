@@ -7,7 +7,7 @@ import SearchBar from './components/search_bar';
 import VideoList from  './components/video_list';
 import VideoDetail from './components/video_detail';
 
-const API_KEY = 'AIzaSyAYrEUDDwKXMM1_AeulTVPcXkarKTmv3sY'
+
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +31,7 @@ class App extends Component {
   render() {
     // the term_.debounce throttles calls. It waits for some time to pass by before calling a function,
     // in this case it waits for 400 milliseconds before calling the function videoSearch.
+    // the reason to do this is so as to avoid excessively invoking functions and slowing down performance
     const searchVideo = _.debounce(term => {this.videoSearch(term)}, 400)
     return (
       <div>
