@@ -1,7 +1,11 @@
 {
-  "name": "videosearch",
+  "name": "VideoSearch",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "5.6.0",
+    "node": "9.2.1"
+  },
   "dependencies": {
     "lodash": "^4.17.10",
     "npm": "^5.8.0",
